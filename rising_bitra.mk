@@ -24,8 +24,18 @@ $(call inherit-product, vendor/rising/config/rising.mk)
 # Inherit from device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
+# risingOS Stuffs
+RISING_CHIPSET := SDM870-5G
+RISING_DEVICE := bitra
+#TARGET_FACE_UNLOCK_SUPPORTED := true
+#EXTRA_UDFPS_ANIMATIONS := true
+TARGET_INCLUDE_LIVE_WALLPAPERS := true
+TARGET_SUPPORTS_GOOGLE_RECORDER := true
+TARGET_SUPPORTS_QUICK_TAP := true
+TARGET_SUPPORTS_NEXT_GEN_ASSISTANT := true
 RISING_MAINTAINER := Badr98-t
 WITH_GMS := true
+TARGET_BUILD_APERTURE_CAMERA := true
 
 # Device identifier. This must come after all inclusions.
 PRODUCT_NAME := rising_bitra
