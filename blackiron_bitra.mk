@@ -18,27 +18,31 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common Rising stuff.
-$(call inherit-product, vendor/rising/config/rising.mk)
+# Inherit some common blackiron stuff.
+$(call inherit-product, vendor/blackiron/config/common_full_phone.mk)
 
-# Inherit from device
-$(call inherit-product, $(LOCAL_PATH)/device.mk)
+# Blackiron
+BLACKIRON_BUILDTYPE := Official
 
 # risingOS Stuffs
-RISING_CHIPSET := SDM870-5G
-RISING_DEVICE := bitra
-#TARGET_FACE_UNLOCK_SUPPORTED := true
-#EXTRA_UDFPS_ANIMATIONS := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
 TARGET_INCLUDE_LIVE_WALLPAPERS := true
 TARGET_SUPPORTS_GOOGLE_RECORDER := true
 TARGET_SUPPORTS_QUICK_TAP := true
 TARGET_SUPPORTS_NEXT_GEN_ASSISTANT := true
-RISING_MAINTAINER := Badr98-t
-WITH_GMS := true
-TARGET_BUILD_APERTURE_CAMERA := true
+TARGET_ENABLE_BLUR := true
+
+# Enable extra UDFPS animations
+EXTRA_UDFPS_ANIMATIONS := true
+
+# Set Boot Animination Resolution
+TARGET_BOOT_ANIMATION_RES := 1080
+
+# Inherit from device
+$(call inherit-product, $(LOCAL_PATH)/device.mk)
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := rising_bitra
+PRODUCT_NAME := blackiron_bitra
 PRODUCT_DEVICE := bitra
 PRODUCT_BRAND := Realme
 PRODUCT_MODEL := Realme GT Neo 2
