@@ -23,8 +23,6 @@ $(call inherit-product, vendor/blackiron/config/common_full_phone.mk)
 
 # Blackiron
 BLACKIRON_BUILDTYPE := Official
-
-# risingOS Stuffs
 TARGET_FACE_UNLOCK_SUPPORTED := true
 TARGET_INCLUDE_LIVE_WALLPAPERS := true
 TARGET_SUPPORTS_GOOGLE_RECORDER := true
